@@ -2,20 +2,20 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c>
+ * @brief <The main file for the statistic caclulation program >
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Mathew Xavier Earathu>
+ * @date <07/05/2020 >
  *
  */
 
@@ -41,3 +41,31 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(unsigned int length, unsigned char *array) {
+
+}
+
+void sort_array(unsigned int length, unsigned char *array) {
+
+}
+
+unsigned char find_median(unsigned int length, unsigned char *array) {
+
+}
+
+unsigned char find_mean(unsigned int length, unsigned char *array) {
+
+}
+
+unsigned char find_maximum(unsigned int length, unsigned char *array) {
+
+}
+
+unsigned char find_minimum(unsigned int length, unsigned char *array) {
+
+}
+
+void print_array(unsigned int length, unsigned char *array) {
+
+}
