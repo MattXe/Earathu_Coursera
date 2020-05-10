@@ -12,8 +12,9 @@
  * @file <stats.c>
  * @brief <The main file for the statistic caclulation program >
  *
- * <Add Extended Description Here>
- *
+ * This is the implementation file for the statistical program that will take
+ * an array of char and calculate values such as the mean, median, maximum and
+ * minimum from it.
  * @author <Mathew Xavier Earathu>
  * @date <07/05/2020 >
  *
@@ -37,35 +38,80 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  sort_array(SIZE, test);
+  print_array(SIZE, test);
+  print_statistics(SIZE, test);
 
 }
 
 /* Add other Implementation File Code Here */
 
 void print_statistics(unsigned int length, unsigned char *array) {
+    printf("The value of the median is %d.\n", find_median(SIZE, array));
+    printf("The value of the mean is %d.\n", find_mean(SIZE, array));
+    printf("The value of the maximum is %d.\n", find_maximum(SIZE, array));
+    printf("The value of the minimum is %d.\n", find_minimum(SIZE, array));
 
 }
 
 void sort_array(unsigned int length, unsigned char *array) {
+    int i, j;
+    unsigned char k;
+
+    for (i = 0; i < length; i++) {
+        for (j = i + 1; j < length; j++) {
+            if (*(array + j) > *(array + i)) {
+                k = *(array + i);
+                *(array + i) = *(array + j);
+                *(array + j) = k;
+            }
+        }
+    }
 
 }
 
 unsigned char find_median(unsigned int length, unsigned char *array) {
-
+    if ((length % 2) == 0) {
+        return ((length % 2) == 0) ? (array[(length - 1)/2] + array[length/2])/2
+                : array[length / 2];
+    }
 }
 
 unsigned char find_mean(unsigned int length, unsigned char *array) {
-
+    int i;
+    unsigned int sum = 0;
+    for (i = 0; i < length; i++) {
+        sum += array[i];
+    }
+    return sum / length;
 }
 
 unsigned char find_maximum(unsigned int length, unsigned char *array) {
-
+    int value = array[0];
+    int i;
+    for (i = 1; i < length; i++) {
+        if (array[i] > value) {
+            value = array[i];
+        }
+    }
+    return value;
 }
 
 unsigned char find_minimum(unsigned int length, unsigned char *array) {
-
+    int value = array[0];
+    int i;
+    for (i = 0; i < length; i++) {
+        if (array[i] < value) {
+            value = array[i];
+        }
+    }
+    return value;
 }
 
 void print_array(unsigned int length, unsigned char *array) {
-
+    int i;
+    for (i = 0; i < length; i++) {
+        printf("%d ", *(array + i));
+    }
+    printf("\n");
 }

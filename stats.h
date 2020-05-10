@@ -12,8 +12,9 @@
  * @file <stats.h>
  * @brief <The header file for the statistic calculation program >
  *
- * <Add Extended Description Here>
- *
+ * This is the header file for the statistal program that will take an array
+ * of chars and calculate values such as the mean, median, maximum and
+ * minimum from it.  
  * @author <Mathew Xavier Earathu>
  * @date <07/05/2020 >
  *
